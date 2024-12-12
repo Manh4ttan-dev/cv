@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
-import Flag from "react-world-flags";
+// import Flag from "react-world-flags";
 
 export default function CVPage() {
   return (
@@ -331,7 +331,7 @@ function ContactInfo({
 }
 
 function LanguageItem({
-  countryCode,
+  // countryCode,
   text,
 }: {
   countryCode: string;
@@ -339,7 +339,7 @@ function LanguageItem({
 }) {
   return (
     <li className="inline-flex items-center space-x-2 mx-2">
-      <Flag code={countryCode} className="w-6 h-4 rounded shadow-sm" />
+      {/* <Flag code={countryCode} className="w-6 h-4 rounded shadow-sm" /> */}
       <span>{text}</span>
     </li>
   );
