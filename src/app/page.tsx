@@ -2,8 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
-// import Flag from "react-world-flags";
+import {
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa";
 
 export default function CVPage() {
   return (
@@ -26,7 +31,7 @@ export default function CVPage() {
                   <CardTitle className="text-4xl font-extrabold">
                     RICARDO PAREDES CORNEJO
                   </CardTitle>
-                  <p className="text-xl">Ingeniero de Software</p>
+                  <p className="text-xl">Desarrollador Full Stack</p>
                 </div>
               </div>
             </CardHeader>
@@ -45,7 +50,7 @@ export default function CVPage() {
                 <ContactInfo
                   href="#"
                   icon={<FaMapMarkerAlt aria-label="Ubicación" />}
-                  text="Psje Ubaldo S/N, El Tambo - Huancayo"
+                  text="Huancayo, Junín, Perú"
                 />
               </div>
             </CardContent>
@@ -59,15 +64,16 @@ export default function CVPage() {
             <CardContent>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Base de datos",
-                  "Programación",
-                  "Desarrollo web",
-                  "Análisis de sistemas",
-                  "Administración de proyectos",
-                  "Arquitectura de software",
-                  "Solución de problemas",
-                  "Gestión de equipos",
-                  "Habilidades de comunicación",
+                  "Desarrollo Web Full Stack",
+                  "Arquitectura de Microservicios",
+                  "DevOps & CI/CD",
+                  "Bases de datos SQL/NoSQL",
+                  "Infraestructura Cloud (AWS)",
+                  "Contenedores Docker",
+                  "Desarrollo de APIs REST",
+                  "Tecnologías Educativas (Ed-Tech)",
+                  "Trabajo en equipo",
+                  "Resolución de problemas",
                 ].map((skill) => (
                   <Badge
                     key={skill}
@@ -88,10 +94,11 @@ export default function CVPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <SkillBar skill="JavaScript" level={90} />
-                <SkillBar skill="C#" level={85} />
+                <SkillBar skill="JavaScript/TypeScript" level={95} />
+                <SkillBar skill="C#" level={90} />
+                <SkillBar skill="PHP" level={85} />
                 <SkillBar skill="Java" level={80} />
-                <SkillBar skill="Python" level={50} />
+                <SkillBar skill="Python" level={60} />
               </div>
             </CardContent>
           </Card>
@@ -99,17 +106,56 @@ export default function CVPage() {
           {/* Frameworks */}
           <Card>
             <CardHeader>
-              <CardTitle>FRAMEWORKS</CardTitle>
+              <CardTitle>FRAMEWORKS & TECNOLOGÍAS</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <SkillBar skill="Express" level={90} />
-                <SkillBar skill=".NET" level={90} />
-                <SkillBar skill=".Net Core" level={88} />
+                <SkillBar skill="Laravel (PHP)" level={85} />
+                <SkillBar skill="React / React Native" level={85} />
+                <SkillBar skill=".NET Core" level={90} />
+                <SkillBar skill="Node.js / Express" level={90} />
                 <SkillBar skill="Angular" level={80} />
-                <SkillBar skill="React" level={80} />
-                <SkillBar skill="Flutter" level={70} />
-                <SkillBar skill="Spring" level={50} />
+                <SkillBar skill="Flutter" level={75} />
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Bases de Datos */}
+          <Card>
+            <CardHeader>
+              <CardTitle>BASES DE DATOS</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <SkillBar skill="PostgreSQL" level={90} />
+                <SkillBar skill="MySQL / MariaDB" level={85} />
+                <SkillBar skill="MongoDB" level={85} />
+                <SkillBar skill="SQL Server" level={80} />
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* DevOps & Infraestructura */}
+          <Card>
+            <CardHeader>
+              <CardTitle>DEVOPS & INFRAESTRUCTURA</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Docker",
+                  "Docker Swarm",
+                  "GitLab CI/CD",
+                  "AWS (EC2, S3, ECS)",
+                  "Linux (Ubuntu/Debian)",
+                  "Nginx",
+                  "Apache",
+                  "Terraform",
+                ].map((tech) => (
+                  <Badge key={tech} variant="outline">
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </CardContent>
           </Card>
@@ -121,26 +167,9 @@ export default function CVPage() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc list-inside space-y-2">
-                <LanguageItem
-                  countryCode="US"
-                  text="Inglés | Nivel intermedio"
-                />
-                <LanguageItem countryCode="ES" text="Español | Nativo" />
+                <LanguageItem text="Español | Nativo" />
+                <LanguageItem text="Inglés | Nivel intermedio (lectura técnica avanzada)" />
               </ul>
-            </CardContent>
-          </Card>
-
-          {/* Educación */}
-          <Card>
-            <CardHeader>
-              <CardTitle>EDUCACIÓN</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <h4 className="font-semibold">INGENIERO DE SOFTWARE</h4>
-              <p>
-                Pontificia Universidad Católica del Peru, Lima, Peru | Mar 2017
-                - Jul 2022
-              </p>
             </CardContent>
           </Card>
         </div>
@@ -150,20 +179,20 @@ export default function CVPage() {
           {/* Objetivo Profesional */}
           <Card>
             <CardHeader>
-              <CardTitle>Sobre mi</CardTitle>
+              <CardTitle>PERFIL PROFESIONAL</CardTitle>
             </CardHeader>
             <CardContent>
               <p>
-                Ingeniero de Software graduado de la Pontificia Universidad
-                Católica del Perú. A lo largo de mi carrera, he ocupado roles en
-                Desarrollo de Software, Producción de Sistemas y Soporte
-                Técnico, desarrollando una sólida experiencia en el diseño e
-                implementación de soluciones tecnológicas. Mi enfoque se centra
-                en la excelencia técnica, destacando especialmente en el uso de
-                tecnologías como JavaScript, C# y la administración eficiente de
-                bases de datos, con énfasis en PostgreSQL. Apasionado por la
-                resolución creativa de problemas y siempre buscando aprender y
-                crecer en el siempre cambiante mundo de la tecnología.
+                Desarrollador Full Stack con más de 5 años de experiencia en el
+                diseño, desarrollo e implementación de soluciones tecnológicas.
+                Especializado en el desarrollo de plataformas educativas
+                (Ed-Tech) y sistemas empresariales, con sólida experiencia en
+                arquitectura de microservicios, DevOps y gestión de
+                infraestructura cloud. Actualmente participo en el desarrollo de
+                AKDEMIC, una plataforma educativa que sirve a múltiples
+                universidades en Perú. Apasionado por crear soluciones
+                tecnológicas que impacten positivamente en la educación y el
+                aprendizaje.
               </p>
             </CardContent>
           </Card>
@@ -175,117 +204,143 @@ export default function CVPage() {
             </CardHeader>
             <CardContent className="space-y-6">
               <JobExperience
-                title="ANALISTA DE DESARROLLO DE SISTEMAS"
+                title="DESARROLLADOR FULL STACK & DEVOPS"
                 company="Enchufate SAC"
                 date="Sep 2024 - Actualidad"
                 responsibilities={[
-                  "Desarrollo ágil Scrum",
-                  "Gestión de Aplicaciones WEB con MVC .NET 6",
-                  "Desarrollo de sistemas Universitarios",
+                  "Desarrollo y mantenimiento de AKDEMIC, plataforma educativa que sirve a múltiples universidades peruanas",
+                  "Implementación de arquitectura de microservicios con Docker Swarm (16 módulos independientes)",
+                  "Diseño e implementación de pipelines CI/CD con GitLab para despliegues automatizados",
+                  "Desarrollo de módulos con PHP/Laravel y .NET Core según requerimientos",
+                  "Integración de pasarelas de pago y generación de certificados PDF",
+                  "Gestión de bases de datos PostgreSQL y MongoDB en producción",
+                  "Desarrollo del sistema contable CONTASOFT con funcionalidades de reportería financiera",
                 ]}
-                details="Desarrollo de sistemas universitarios, con un enfoque en la eficiencia y la escalabilidad. Trabajo en un equipo ágil utilizando Scrum, desarrollando aplicaciones web con .NET 6."
+                technologies={[
+                  "PHP 8",
+                  "Laravel",
+                  ".NET Core",
+                  "Docker",
+                  "GitLab CI/CD",
+                  "PostgreSQL",
+                  "MongoDB",
+                  "React",
+                  "TypeScript",
+                  "AWS",
+                  "Nginx",
+                ]}
+                details="Participo activamente en el desarrollo de una plataforma Ed-Tech que gestiona procesos académicos, administrativos y financieros para universidades. Implementé la infraestructura DevOps con contenedores Docker y pipelines de CI/CD, reduciendo significativamente los tiempos de despliegue y mejorando la estabilidad del sistema."
               />
 
               <Separator />
 
               <JobExperience
                 title="ANALISTA LÍDER DE PRODUCCIÓN DE SISTEMAS"
-                company="Caja Centro, Huancayo, Junin"
+                company="Caja Centro, Huancayo"
                 date="Dic 2023 - Ago 2024"
                 responsibilities={[
-                  "Identificación y resolución de problemas en la producción.",
-                  "Automatización de procesos y reportes.",
+                  "Gestión de despliegues a producción en entornos Linux",
+                  "Automatización de procesos operativos y reportes con scripts",
+                  "Administración y optimización de bases de datos PostgreSQL",
+                  "Configuración y mantenimiento de replicación de servidores",
+                  "Monitoreo de infraestructura y resolución de incidentes críticos",
                 ]}
-                details={
-                  "Experiencia en el sector financiero, gestionando despliegues a producción y automatizando diversos procesos operativos. Amplia experiencia en la administración de bases de datos y servidores, incluyendo la optimización y mejora de la replicación en servidores PostgreSQL. Enfoque en la eficiencia, seguridad y continuidad de las operaciones."
-                }
+                technologies={[
+                  "PostgreSQL",
+                  "Linux",
+                  "Docker",
+                  "PHP",
+                  "Shell Scripting",
+                  "Nginx",
+                ]}
+                details="Responsable de la estabilidad y disponibilidad de los sistemas en producción del sector financiero. Implementé mejoras en la replicación de bases de datos y automaticé procesos críticos, reduciendo tiempos de respuesta ante incidentes."
               />
 
               <Separator />
 
               <JobExperience
                 title="ANALISTA DE PRODUCCIÓN DE SISTEMAS"
-                company="Caja Centro, Huancayo, Junin"
+                company="Caja Centro, Huancayo"
                 date="May 2023 - Dic 2023"
                 responsibilities={[
-                  "Administración de bases de datos en producción.",
-                  "Gestión y monitoreo de servidores.",
-                  "Desarrollo de aplicativo móvil para gestión de incidentes.",
+                  "Administración de bases de datos PostgreSQL y MongoDB en producción",
+                  "Gestión y monitoreo de servidores Linux",
+                  "Desarrollo de aplicativo móvil para gestión de incidentes con Flutter",
+                  "Soporte técnico y resolución de problemas reportados por usuarios",
                 ]}
-                details={
-                  "Desarrollé una aplicación móvil para la gestión de incidentes comunes en producción, lo que permitió resolver problemas de manera más eficiente y oportuna, incluso fuera del horario de oficina. La aplicación fue creada utilizando Flutter para el frontend, con un backend desarrollado en .NET 6 y PostgreSQL como motor de base de datos."
-                }
+                technologies={[
+                  "Flutter",
+                  ".NET 6",
+                  "PostgreSQL",
+                  "MongoDB",
+                  "Linux",
+                  "Docker",
+                ]}
+                details="Desarrollé una aplicación móvil que permitió resolver incidentes de producción de manera remota, mejorando los tiempos de respuesta significativamente. Backend desarrollado en .NET 6 con PostgreSQL."
               />
 
               <Separator />
 
               <JobExperience
                 title="ANALISTA DE DESARROLLO DE SISTEMAS"
-                company="Caja Centro, Huancayo, Junin"
+                company="Caja Centro, Huancayo"
                 date="Feb 2023 - May 2023"
                 responsibilities={[
-                  "Analista de Desarrollo de Sistemas con más de 2 años de experiencia en la industria",
-                  "Amplio conocimiento en lenguajes de programación como JavaScript, C# y Flutter",
-                  "Experiencia en el diseño y desarrollo de bases de datos relacionales y no relacionales",
-                  "Atención de requerimientos a necesidades de negocio",
+                  "Desarrollo de aplicaciones web con PHP y .NET",
+                  "Desarrollo de funcionalidades para aplicación móvil en Flutter",
+                  "Diseño e implementación de APIs REST con Node.js",
+                  "Mantenimiento de sistemas legacy en Visual Fox Pro",
                 ]}
-                details={
-                  "Ingresé al sector financiero como Analista de Desarrollo de Sistemas, donde pude aplicar mis conocimientos en el desarrollo de aplicaciones web y móviles. Trabajé con aplicaciones de escritorio en Visual Fox Pro y desarrollé los sistemas empresariales utilizando .NET, Node.js y Angular. Además, estuve a cargo del desarrollo de funcionalidades para la aplicación móvil en Flutter."
-                }
+                technologies={[
+                  "PHP",
+                  ".NET",
+                  "Node.js",
+                  "Angular",
+                  "Flutter",
+                  "MySQL",
+                  "MongoDB",
+                ]}
+                details="Participé en el desarrollo de múltiples sistemas empresariales del sector financiero, incluyendo aplicaciones web y móviles. Trabajé con stack tecnológico diverso adaptándome a las necesidades del negocio."
               />
 
               <Separator />
 
               <JobExperience
-                title="INGENIERO DE SOFTWARE"
-                company="AIBR KARAZ, Junín, Huancayo"
+                title="DESARROLLADOR DE SOFTWARE"
+                company="AIBR KARAZ, Huancayo"
                 date="Nov 2021 - Ene 2023"
                 responsibilities={[
-                  "Desarrollo de aplicaciones web con Java y Spring.",
-                  "Diseño de bases de datos con SQL y MongoDB.",
-                  "Desarrollo de un ERP inmobiliario completo.",
+                  "Desarrollo de ERP inmobiliario completo con Spring y Angular",
+                  "Diseño de arquitectura de base de datos con MySQL y MongoDB",
+                  "Desarrollo de APIs REST y servicios backend con Java/Spring",
+                  "Implementación de módulos de gestión de ventas, inventario y clientes",
                 ]}
-                details="Desarrollé un ERP completo para una empresa inmobiliaria, utilizando Spring y Angular, que integró todas las áreas de la empresa. Este sistema mejoró significativamente la eficiencia operativa, optimizando procesos y reduciendo tiempos de gestión."
+                technologies={[
+                  "Java",
+                  "Spring Boot",
+                  "Angular",
+                  "MySQL",
+                  "MongoDB",
+                  "Docker",
+                ]}
+                details="Desarrollé desde cero un ERP completo que integró todas las áreas operativas de una empresa inmobiliaria, mejorando significativamente la eficiencia en la gestión de propiedades, clientes y transacciones."
               />
 
               <Separator />
-              {/* <JobExperience
-                title="ADMINISTRADOR DE BASE DE DATOS"
-                company="Teleatento del Perù SAC"
-                date="Abr 2021 - Sep 2021"
-                responsibilities={[
-                  "Mantenimiento, administración y gestión de bases de datos.",
-                ]}
-                details={
-                  "Responsable de la administración y mantenimiento de bases de datos, incluyendo la gestión de usuarios, permisos y la optimización de consultas. Cuento con experiencia trabajando con bases de datos tanto relacionales como no relacionales, como MySQL y MongoDB, asegurando un rendimiento óptimo y la integridad de los datos."
-                }
-              /> */}
-              <Separator />
+
               <JobExperience
-                title="Analista de Sistemas"
-                company="TEXTIMAX SAC"
+                title="ANALISTA DE SISTEMAS"
+                company="TEXTIMAX SAC, Lima"
                 date="Ene 2020 - Abr 2021"
                 responsibilities={[
-                  "Desarrollo de aplicaciones web con Java  8",
-                  "Desarrollo de aplicacion con VB.NET",
-                  "Diseño de bases de datos con SQLServer",
+                  "Desarrollo de aplicaciones web con Java y PHP",
+                  "Desarrollo de aplicaciones de escritorio con VB.NET",
+                  "Diseño y administración de bases de datos SQL Server y MySQL",
+                  "Integración de sistemas y automatización de procesos",
                 ]}
-                details="Desarrollé aplicaciones de escritorio para la empresa utilizando Java y VB.NET, optimizando la experiencia del usuario y los procesos internos. Además, participé en el diseño y gestión de bases de datos relacionales, implementando soluciones eficientes con SQL Server."
+                technologies={["Java", "PHP", "VB.NET", "SQL Server", "MySQL"]}
+                details="Desarrollé soluciones tecnológicas para optimizar procesos operativos en el sector textil, incluyendo aplicaciones de gestión de inventario y producción."
               />
-              <Separator />
-              {/* <JobExperience
-                title="Practicante"
-                company="TEXTIMAX SAC"
-                date="Jul 2019 - Ene 2020"
-                responsibilities={[
-                  "Desarrollo de aplicaciones web con Java  8",
-                  "Desarrollo de aplicacion con VB.NET",
-                  "Diseño de bases de datos con SQLServer",
-                  "Soporte técnico",
-                  "Mantenimiento de equipos",
-                ]}
-                details="Inicié mi carrera en el mundo IT como practicante en Textimax, donde apliqué mis conocimientos en el desarrollo de aplicaciones web y de escritorio. Además, brindé soporte técnico a los usuarios, realizando mantenimiento preventivo y correctivo de equipos de cómputo, así como diagnósticos y reparación de impresoras y PCs."
-              /> */}
             </CardContent>
           </Card>
         </div>
@@ -293,16 +348,17 @@ export default function CVPage() {
     </div>
   );
 }
+
 function SkillBar({ skill, level }: { skill: string; level: number }) {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <span>{skill}</span>
-        <span>{level}%</span>
+        <span className="text-sm font-medium">{skill}</span>
+        <span className="text-sm text-muted-foreground">{level}%</span>
       </div>
       <div className="w-full h-2 bg-gray-200 rounded-full">
         <div
-          className="h-full bg-blue-500 rounded-full"
+          className="h-full bg-blue-500 rounded-full transition-all"
           style={{ width: `${level}%` }}
         />
       </div>
@@ -322,24 +378,17 @@ function ContactInfo({
   return (
     <a
       href={href}
-      className="flex items-center space-x-2 hover:text-blue-400 transition-colors"
+      className="flex items-center space-x-2 hover:text-blue-200 transition-colors"
     >
       {icon}
-      <span>{text}</span>
+      <span className="text-sm">{text}</span>
     </a>
   );
 }
 
-function LanguageItem({
-  // countryCode,
-  text,
-}: {
-  countryCode: string;
-  text: string;
-}) {
+function LanguageItem({ text }: { text: string }) {
   return (
-    <li className="inline-flex items-center space-x-2 mx-2">
-      {/* <Flag code={countryCode} className="w-6 h-4 rounded shadow-sm" /> */}
+    <li className="flex items-center space-x-2">
       <span>{text}</span>
     </li>
   );
@@ -350,29 +399,44 @@ function JobExperience({
   company,
   date,
   responsibilities,
+  technologies,
   details,
 }: {
   title: string;
   company: string;
   date: string;
   responsibilities: string[];
+  technologies?: string[];
   details?: string;
 }) {
   return (
-    <div className="space-y-2">
-      <h4 className="font-semibold">{title}</h4>
-      <p className="text-sm text-muted-foreground">
-        {company} | {date}
-      </p>
-      <ul className="list-disc list-inside space-y-1">
+    <div className="space-y-3">
+      <div>
+        <h4 className="font-bold text-lg">{title}</h4>
+        <p className="text-sm text-muted-foreground">
+          {company} | {date}
+        </p>
+      </div>
+
+      <ul className="list-disc list-inside space-y-1 text-sm">
         {responsibilities.map((resp, index) => (
           <li key={index}>{resp}</li>
         ))}
       </ul>
-      <div className="mt-2 text-sm text-muted-foreground">
-        <h5 className="font-semibold">Detalles:</h5>
-        <p>{details}</p>
-      </div>
+
+      {technologies && (
+        <div className="flex flex-wrap gap-1">
+          {technologies.map((tech) => (
+            <Badge key={tech} variant="outline" className="text-xs">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+      )}
+
+      {details && (
+        <p className="text-sm text-muted-foreground italic">{details}</p>
+      )}
     </div>
   );
 }
