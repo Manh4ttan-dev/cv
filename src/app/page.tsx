@@ -2,13 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import {
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaLinkedin,
-  FaGithub,
-} from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 export default function CVPage() {
   return (
